@@ -20,6 +20,12 @@ function setEnabled() {
 }
 function isValid() {
 	minutesRef.value = minutesRef.value.trim();
+	if(minutesRef.value == 0) {
+		minutesRef.value = minutesRef.value[minutesRef.value.length-1];
+	}
+	if(secondsRef.value == 0) {
+		secondsRef.value = secondsRef.value[secondsRef.value.length-1];
+	}
 	if(!(minutesRef.value >= 0 && minutesRef.value < 60) || !(secondsRef.value >= 0 && secondsRef.value < 60)
 		|| minutesRef.value.length === 0 || secondsRef.value.length === 0) {
 		console.log("helllo");
