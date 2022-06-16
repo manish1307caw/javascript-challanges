@@ -19,6 +19,7 @@ function setEnabled() {
 	}
 }
 function isValid() {
+	minutesRef.value = minutesRef.value.trim();
 	if(!(minutesRef.value >= 0 && minutesRef.value < 60) || !(secondsRef.value >= 0 && secondsRef.value < 60)
 		|| minutesRef.value.length === 0 || secondsRef.value.length === 0) {
 		console.log("helllo");
