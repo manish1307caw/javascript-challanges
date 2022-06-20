@@ -1,3 +1,4 @@
+const podList = document.querySelectorAll('input[type="checkbox"]');
 const episodes = [
   {
     'id': 1,
@@ -148,3 +149,7 @@ const episodes = [
     'name': 'Building a Course'
   }
 ];
+function checkingUp(element) {
+  
+}
+podList.forEach(element = () => checkingUp(element));
