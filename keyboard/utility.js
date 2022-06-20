@@ -1,3 +1,4 @@
+import {listOfAllKeysByClassName} from './app.js';
 function setJiggleToAnotherKey() {
     let keyToBeSelected = Math.floor((Math.random() * 52) + 0);
     listOfAllKeysByClassName[keyToBeSelected].classList.add("jiggle");
