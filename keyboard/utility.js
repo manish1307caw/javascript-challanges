@@ -1,4 +1,4 @@
-import {listOfAllKeysByClassName} from './app.js';
+let listOfAllKeysByClassName = document.getElementsByClassName("key");
 function setJiggleToAnotherKey() {
     let keyToBeSelected = Math.floor((Math.random() * 52) + 0);
     listOfAllKeysByClassName[keyToBeSelected].classList.add("jiggle");
@@ -6,7 +6,7 @@ function setJiggleToAnotherKey() {
 
 }
 
-var keyCheck = (keyRef) => {
+let keyCheck = (keyRef) => {
     var jigglingElement = document.getElementById("Jiggling");
     if(jigglingElement.getAttribute("data-key").toString() == keyRef) {
         jigglingElement.classList.remove("jiggle");
@@ -17,7 +17,7 @@ var keyCheck = (keyRef) => {
         console.log("You Entered Wrong key");
     }
 }
-function preventException(event, keyVal){
+let preventException = (event, keyVal) => {
     if (keyVal == "TAB") {  //tab pressed
         event.preventDefault(); // stops its action
     }

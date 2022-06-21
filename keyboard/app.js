@@ -9,6 +9,3 @@ window.addEventListener("keydown", (event)=>{
     preventException(event, keyVal); 
     keyCheck(keyVal);
 });
-export {
-    listOfAllKeysByClassName
-};
