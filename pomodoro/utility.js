@@ -1,8 +1,14 @@
 
-import {
-	startButton, secondsRef, minutesRef, checker, settingsButtonRef, ring, zero, interval
-} from './c1.js';
-function setEnabled() {
+// Var to be Used
+let startButton = document.getElementById("timerTrigger");
+let secondsRef = document.getElementById("secondsTBR");
+let minutesRef = document.getElementById("minutesTBR");
+let checker = document.getElementsByClassName("time")[0];
+let settingsButtonRef = document.getElementById("settingsTBR");
+let ring = document.getElementsByClassName("ring")[0];
+let zero = "0";
+let interval = null
+let setEnabled = () => {
 	minutesRef.disabled = true;
 	secondsRef.disabled = true;
 	console.log(checker.id);
@@ -16,7 +22,7 @@ function setEnabled() {
 }
 
 
-function isValid() {
+let isValid = () => {
 	minutesRef.value = minutesRef.value.trim();
 	if(minutesRef.value == 0) {
 		minutesRef.value = minutesRef.value[minutesRef.value.length-1];
@@ -35,7 +41,7 @@ function isValid() {
 	}
 }
 
-function invertState(messageToBeDisplayed) {
+let invertState = (messageToBeDisplayed) => {
 	alert(messageToBeDisplayed);
 	setEnabled();
 	minutesRef.value = "00";
@@ -44,7 +50,7 @@ function invertState(messageToBeDisplayed) {
 	secondsRef.disabled = !secondsRef.disabled;
 }
 
-function changeTiming(interval) {
+let changeTiming = (interval) => {
 	if(secondsRef.value <= 0) {
 		if(minutesRef.value <= 0) {
 			ring.style.stroke = "red";
@@ -58,7 +64,7 @@ function changeTiming(interval) {
 	} else {
 		secondsRef.value--;
 	}
-	var txt = "".concat(minutesRef.value);
+	let txt = "".concat(minutesRef.value);
 	if(txt.length === 1) {
 		minutesRef.value = zero.concat(minutesRef.value);
 	}
@@ -68,7 +74,7 @@ function changeTiming(interval) {
 	}
 }
 
-function alterSettings() {
+let alterSettings = () => {
 	if(checker.id === "true") {
 		// checker.id = "true";
 		ring.style.stroke = "blue";
@@ -78,7 +84,7 @@ function alterSettings() {
 	}
 }
 
-function switcher() {
+let switcher = () => {
 	setEnabled();
 	if(checker.id === "false" ){
 		ring.style.stroke = "green";
