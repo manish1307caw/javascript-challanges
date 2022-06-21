@@ -152,4 +152,3 @@ const episodes = [
 function checkingUp(element) {
   
 }
-podList.forEach(element = () => checkingUp(element));
