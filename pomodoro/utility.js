@@ -1,4 +1,3 @@
-//variables to be Used
 let startButton = document.getElementById("timerTrigger");
 let secondsRef = document.getElementById("secondsTBR");
 let minutesRef = document.getElementById("minutesTBR");
@@ -71,7 +70,6 @@ let changeTiming = (interval) => {
 
 let alterSettings = () => {
 	if(checker.id === "true") {
-		// checker.id = "true";
 		ring.style.stroke = "blue";
 		startButton.innerHTML = "START";
 		minutesRef.disabled = false;
