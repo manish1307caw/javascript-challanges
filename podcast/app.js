@@ -150,9 +150,11 @@ const episodes = [
   }
 ];
 
-function changeSettings(element, idx) {
-  console.log(element);
+function changeSettings(event, element, idx) {
+  console.log(element, "Event is ", event);
 }
 checkbox.forEach((element, idx) => {
-  element.addEventListener('click', () => changeSettings(checkbox[idx], idx));
+  element.addEventListener('click', (event) => {
+    changeSettings(event, element);
+  });
 });
