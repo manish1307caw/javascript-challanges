@@ -151,11 +151,7 @@ const episodes = [
 ];
 
 function changeSettings(element, idx) {
-  if(element.checked) {
-    console.log("Checked", idx);
-  } else {
-    console.log("Unchecked", idx);
-  }
+  console.log(element);
 }
 checkbox.forEach((element, idx) => {
   element.addEventListener('click', () => changeSettings(checkbox[idx], idx));
