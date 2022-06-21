@@ -1,5 +1,4 @@
-
-// Var to be Used
+//variables to be Used
 let startButton = document.getElementById("timerTrigger");
 let secondsRef = document.getElementById("secondsTBR");
 let minutesRef = document.getElementById("minutesTBR");
@@ -11,7 +10,6 @@ let interval = null
 let setEnabled = () => {
 	minutesRef.disabled = true;
 	secondsRef.disabled = true;
-	console.log(checker.id);
 	if(checker.id === "true") {
 		checker.id = "false";
 		startButton.innerHTML = "STOP";
@@ -32,11 +30,8 @@ let isValid = () => {
 	}
 	if(!(minutesRef.value >= 0 && minutesRef.value < 60) || !(secondsRef.value >= 0 && secondsRef.value < 60)
 		|| minutesRef.value.length === 0 || secondsRef.value.length === 0) {
-		console.log("helllo");
 		return false;
 	} else {
-		console.log("By");
-		
 		return true;
 	}
 }
@@ -103,10 +98,8 @@ let switcher = () => {
 		}, 1000);
 	} else {
 		ring.style.stroke = "blue";
-		console.log("hi");
+
 	}
-	
-	
 }
 
 export { 
