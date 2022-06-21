@@ -7,14 +7,11 @@ function setJiggleToAnotherKey() {
 }
 
 let keyCheck = (keyRef) => {
-    var jigglingElement = document.getElementById("Jiggling");
+    let jigglingElement = document.getElementById("Jiggling");
     if(jigglingElement.getAttribute("data-key").toString() == keyRef) {
         jigglingElement.classList.remove("jiggle");
         jigglingElement.id = "";
         setJiggleToAnotherKey();
-        
-    } else {
-        console.log("You Entered Wrong key");
     }
 }
 let preventException = (event, keyVal) => {
