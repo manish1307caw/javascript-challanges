@@ -149,13 +149,6 @@ const episodes = [
     'name': 'Building a Course'
   }
 ];
-// checkbox.addEventListener('change', (event) => {
-//   if (event.currentTarget.checked) {
-//     console.log('checked');
-//   } else {
-//     console.log('not checked');
-//   }
-// });
 
 function changeSettings(element, idx) {
   if(element.checked) {
