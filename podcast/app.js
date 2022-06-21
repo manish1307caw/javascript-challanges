@@ -1,4 +1,4 @@
-const podList = document.querySelectorAll('input[type="checkbox"]');
+const checkbox = document.querySelectorAll('input[type="checkbox"]');
 const episodes = [
   {
     'id': 1,
@@ -149,6 +149,10 @@ const episodes = [
     'name': 'Building a Course'
   }
 ];
-function checkingUp(element) {
-  
-}
+checkbox.addEventListener('change', (event) => {
+  if (event.currentTarget.checked) {
+    console.log('checked');
+  } else {
+    console.log('not checked');
+  }
+});
