@@ -149,10 +149,21 @@ const episodes = [
     'name': 'Building a Course'
   }
 ];
-checkbox.addEventListener('change', (event) => {
-  if (event.currentTarget.checked) {
-    console.log('checked');
+// checkbox.addEventListener('change', (event) => {
+//   if (event.currentTarget.checked) {
+//     console.log('checked');
+//   } else {
+//     console.log('not checked');
+//   }
+// });
+
+function changeSettings(element, idx) {
+  if(element.checked) {
+    console.log("Checked", idx);
   } else {
-    console.log('not checked');
+    console.log("Unchecked", idx);
   }
+}
+checkbox.forEach((element, idx) => {
+  element.addEventListener('click', () => changeSettings(checkbox[idx], idx));
 });
