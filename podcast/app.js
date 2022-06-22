@@ -1,4 +1,6 @@
 const checkbox = document.querySelectorAll('input[type="checkbox"]');
+let currentState = "None";
+let currentStateRef = null;
 const episodes = [
   {
     'id': 1,
@@ -149,11 +151,57 @@ const episodes = [
     'name': 'Building a Course'
   }
 ];
-
-function changeSettings(event, element, idx) {
-  console.log(element, "Event is ", event);
+let loopThrough = (startPos, endPos) => {
+  for(let i = startPos; i < endPos-1; i++) {
+    checkbox[i].checked = checkbox[startPos-1].checked;
+  }
 }
-checkbox.forEach((element, idx) => {
+let changeStatesOfKey = (event) => {
+  let endPos = parseInt(currentStateRef.target.name.slice(8));
+  let startPos = parseInt(event.target.name.slice(8));
+  if(endPos < startPos) {
+    let temp = endPos;
+    endPos = startPos;
+    startPos = temp;
+  }
+  console.log("hi", startPos, endPos);
+  loopThrough(startPos, endPos);
+}
+let changeWithoutShift = (event) => {
+  // tbi
+  currentStateRef = event;
+  if(event.target.checked) {
+    currentState = "checked";
+  } else{
+    currentState = "unchecked";
+  }
+  console.log("without shift Key", currentStateRef.target, currentState);
+}
+let changeSettingsTillEnd = (event) => {
+  let startPos = parseInt(event.target.name.slice(8));
+  for(let i = startPos; i < 10; i++) {
+    checkbox[i].checked = checkbox[startPos-1].checked;
+  }
+}
+let changeWithShift = (event) => {
+  if(currentState === "checked" && event.target.checked || (currentState === "unchecked" && !(event.target.checked))) {
+    changeStatesOfKey(event);
+    console.log("within the range")
+  } else {
+    changeSettingsTillEnd(event);
+    console.log("out of range");
+  }
+  console.log(currentState, event.target.checked);
+}
+let changeSettings = (event, element) => {
+  if(event.shiftKey) {
+    changeWithShift(event);
+  } else {
+    changeWithoutShift(event);
+  }
+  console.log(event);
+}
+checkbox.forEach((element) => {
   element.addEventListener('click', (event) => {
     changeSettings(event, element);
   });
