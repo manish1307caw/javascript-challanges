@@ -7,7 +7,7 @@ let loopThrough = (startPos, endPos, temp) => {
     }
     
   }
-  let changeStatesOfKey = (event) => {
+let changeStatesOfKey = (event) => {
     let endPos = parseInt(currentStateRef.target.name.slice(8));
     let startPos = parseInt(event.target.name.slice(8));
     let temp = startPos;
@@ -16,10 +16,9 @@ let loopThrough = (startPos, endPos, temp) => {
       startPos = endPos;
       endPos = temp;
     }
-    console.log("hi", startPos, endPos);
     loopThrough(startPos, endPos, temp);
   }
-  let changeWithoutShift = (event) => {
+let changeWithoutShift = (event) => {
     // tbi
     currentStateRef = event;
     if(event.target.checked) {
@@ -27,25 +26,22 @@ let loopThrough = (startPos, endPos, temp) => {
     } else{
       currentState = "unchecked";
     }
-    console.log("without shift Key", currentStateRef);
   }
-  let changeSettingsTillEnd = (event) => {
+let changeSettingsTillEnd = (event) => {
     let startPos = parseInt(event.target.name.slice(8));
     for(let i = startPos; i < 10; i++) {
       checkbox[i].checked = checkbox[startPos-1].checked;
     }
     console.log(startPos);
   }
-  let changeWithShift = (event) => {
+let changeWithShift = (event) => {
     if(currentState === "checked" && event.target.checked || (currentState === "unchecked" && !event.target.checked)) {
       changeStatesOfKey(event);
-      console.log("within the range")
     } else {
       changeSettingsTillEnd(event);
-      console.log("out of range");
     }
   }
-  let changeSettings = (event, element) => {
+let changeSettings = (event, element) => {
     if(event.shiftKey) {
       changeWithShift(event);
     } else {
@@ -53,7 +49,7 @@ let loopThrough = (startPos, endPos, temp) => {
     }
     console.log(event);
   }
-  export {
+export {
     loopThrough, changeStatesOfKey, changeWithoutShift,
      changeSettingsTillEnd, changeWithShift, changeSettings
   };
