@@ -19,7 +19,6 @@ let changeStatesOfKey = (event) => {
     loopThrough(startPos, endPos, temp);
   }
 let changeWithoutShift = (event) => {
-    // tbi
     currentStateRef = event;
     if(event.target.checked) {
       currentState = "checked";
@@ -32,7 +31,6 @@ let changeSettingsTillEnd = (event) => {
     for(let i = startPos; i < 10; i++) {
       checkbox[i].checked = checkbox[startPos-1].checked;
     }
-    console.log(startPos);
   }
 let changeWithShift = (event) => {
     if(currentState === "checked" && event.target.checked || (currentState === "unchecked" && !event.target.checked)) {
@@ -47,7 +45,6 @@ let changeSettings = (event, element) => {
     } else {
       changeWithoutShift(event);
     }
-    console.log(event);
   }
 export {
     loopThrough, changeStatesOfKey, changeWithoutShift,
