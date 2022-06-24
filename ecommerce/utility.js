@@ -59,11 +59,14 @@ let updateBill = () => {
       element.children[2].children[1].innerHTML;
   });
   tax = totalAmount * 0.0975;
-  billSectionRef.children[0].children[1].innerHTML = totalAmount.toFixed(2);
-  billSectionRef.children[1].children[1].innerHTML = tax.toFixed(2);
-  billSectionRef.children[2].children[1].innerHTML = (
-    parseFloat(tax.toFixed(2)) + parseFloat(totalAmount.toFixed(2))
-  ).toFixed(2);
+  billSectionRef.children[0].children[1].innerHTML =
+    "$ " + totalAmount.toFixed(2);
+  billSectionRef.children[1].children[1].innerHTML = "$ " + tax.toFixed(2);
+  billSectionRef.children[2].children[1].innerHTML =
+    "$ " +
+    (parseFloat(tax.toFixed(2)) + parseFloat(totalAmount.toFixed(2))).toFixed(
+      2
+    );
 };
 const switchButtonAccessibility = (buttonRef) => {
   buttonRef.disabled = !buttonRef.disabled;
