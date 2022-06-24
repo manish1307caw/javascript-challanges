@@ -1,6 +1,6 @@
-import { keyCheck, preventException } from './utility.js';
+import { keyCheck, preventException } from "./utility.js";
 
-window.addEventListener('keydown', (event) => {
+window.addEventListener("keydown", (event) => {
   let keyVal = event.key.toString().toUpperCase();
   preventException(event, keyVal);
   keyCheck(keyVal);
