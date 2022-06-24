@@ -1,6 +1,6 @@
 import{
 
-	setEnabled, isValid, invertState, changeTiming, alterSettings, switcher 
+	 alterSettings, switcher 
 } from './utility.js';
 let settingsButtonRef = document.getElementById("settingsTBR");
 let startButton = document.getElementById("timerTrigger");
